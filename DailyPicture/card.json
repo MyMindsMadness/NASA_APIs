@@ -1,0 +1,80 @@
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "APOD Today",
+            "fontType": "Monospace",
+            "size": "Large",
+            "weight": "Bolder",
+            "color": "Accent",
+            "isSubtle": false,
+            "wrap": true
+        },
+        {
+            "type": "Image",
+            "url": "https://apod.nasa.gov/apod/image/2311/RedAuroraItaly_Hofer_1080.jpg"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": 35,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Title:",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "By:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 65,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "DATE",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "BY",
+                            "color": "Light",
+                            "weight": "Lighter",
+                            "spacing": "Small"
+                        }
+                    ]
+                }
+            ],
+            "spacing": "Padding",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "DESCRIPTION",
+            "wrap": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "title": "See More",
+                    "url": "https://apod.nasa.gov/apod/",
+                    "style": "destructive"
+                }
+            ]
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3"
+}
