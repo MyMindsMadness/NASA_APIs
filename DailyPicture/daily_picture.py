@@ -2,6 +2,12 @@
 
 import requests
 import json 
+from dotenv import load_dotenv
+from pathlib import Path
+import os
+
+my_dotenv_path = Path('NASAenv/env.env')
+load_dotenv(dotenv_path=my_dotenv_path)
 
 #This function modifies the values that are needed for the webex card
 def sendWebex(title, desc, imurl, owner):    
@@ -34,9 +40,9 @@ def sendWebex(title, desc, imurl, owner):
     }
 
     #Auth Key to post via bot to webex.
-    bearer = "OTQ2ZDljZjUtOTEyMi00YTlmLWFjMDItZDk1N2FjMTNkMWRlMGIyYzRiNDEtY2Yz_PE93_9d5fd17e-e625-4e28-a192-110b62d9f11c"
+    bearer = os.getenv('WEBEX_BEARER')
     #Room ID for the webex room you wish to post in
-    room_id = "Y2lzY29zcGFyazovL3VybjpURUFNOmV1LWNlbnRyYWwtMV9rL1JPT00vNmU5YzU0YTAtN2NlOC0xMWVlLWE2MDEtOGY5ZDU1NDlkMGQ3"
+    room_id = os.getenv('WEBEX_ROOM_ID')
     #Payload to including the room id, its title and the attachment defined earlier.
     payload = {
         "roomId": room_id,
@@ -55,9 +61,9 @@ def sendWebex(title, desc, imurl, owner):
 #Main Call to NASA Asto Picture of the Day (APOD)
 def main():
     #APOD url
-    url = "https://api.nasa.gov/planetary/apod?"
+    url = os.getenv('NASA_BASE_URL')
     #Auth key provided to you by NASA
-    api_key = "api_key=FQGOrEgIrGfb2wh23XXshYhOhMwOEueDKEMUzOzE"
+    api_key = os.getenv('NASA_API_KEY')
     #Combine the URL and API key 
     full_api = url+api_key
     #Issue the API GET reguest
