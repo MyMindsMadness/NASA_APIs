@@ -1,4 +1,4 @@
-#!/home/mccube/PersonalProjects/NASA_API/NASAenv/bin/python
+#!/urs/bin/python3
 
 import requests
 import json 
@@ -9,9 +9,15 @@ import os
 my_dotenv_path = Path('NASAenv/env.env')
 load_dotenv(dotenv_path=my_dotenv_path)
 
+webexurl = os.getenv("WEBEX_URL")
+webexbot = os.getenv("WEBEX_BEARER")
+webexroomid = os.getenv("WEBEX_ROOM_ID")
+nasaapodurl = os.getenv("NASE_APOD_BASE_URL")
+nasaapi = os.getenv("NASA_API_KEY")
+
 #This function modifies the values that are needed for the webex card
 def sendWebex(title, desc, imurl, owner):    
-    url = "https://api.ciscospark.com/v1/messages"
+    url = webexurl
     
     #open the card.json file
     with open ('DailyPicture/card.json') as f: 
@@ -40,9 +46,9 @@ def sendWebex(title, desc, imurl, owner):
     }
 
     #Auth Key to post via bot to webex.
-    bearer = os.getenv('WEBEX_BEARER')
+    bearer = webexbot
     #Room ID for the webex room you wish to post in
-    room_id = os.getenv('WEBEX_ROOM_ID')
+    room_id = webexroomid
     #Payload to including the room id, its title and the attachment defined earlier.
     payload = {
         "roomId": room_id,
@@ -56,14 +62,14 @@ def sendWebex(title, desc, imurl, owner):
     }
     #The POST action to webex room taking the ciscospark url defined at top of def,
     #the payload, and headers.
-    reponse = requests.post(url, json=payload, headers=headers)
+    requests.post(url, json=payload, headers=headers)
 
 #Main Call to NASA Asto Picture of the Day (APOD)
 def main():
     #APOD url
-    url = os.getenv('NASA_BASE_URL')
+    url = nasaapodurl
     #Auth key provided to you by NASA
-    api_key = os.getenv('NASA_API_KEY')
+    api_key = nasaapi
     #Combine the URL and API key 
     full_api = url+api_key
     #Issue the API GET reguest
