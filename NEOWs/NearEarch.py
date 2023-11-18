@@ -1,4 +1,4 @@
-#!/home/mccube/PersonalProjects/NASA_API/NASAenv/bin/python
+#!/usr/bin/python
 
 import requests 
 import inquirer 
