@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/mccube/PersonalProjects/NASA_API/NASAenv/bin/python3
 
 import requests
 import json 
