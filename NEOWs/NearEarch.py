@@ -1,7 +1,6 @@
 #!/home/mccube/PersonalProjects/NASA_API/NASAenv/bin/python3
 
 import requests 
-import inquirer 
 import datetime 
 import json
 from dotenv import load_dotenv
