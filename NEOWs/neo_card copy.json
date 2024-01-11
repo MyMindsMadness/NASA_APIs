@@ -116,7 +116,7 @@
                     "items": [
                         {
                             "type": "TextBlock",
-                            "text": "Date of near miss",
+                            "text": "Distance from Earth in Gm",
                             "wrap": true,
                             "isSubtle": true
                         }
@@ -128,7 +128,7 @@
                     "items": [
                         {
                             "type": "TextBlock",
-                            "text": "Distance in Suns",
+                            "text": "Date of Near Miss",
                             "wrap": true,
                             "isSubtle": true
                         }

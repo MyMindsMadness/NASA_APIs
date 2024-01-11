@@ -1,0 +1,39 @@
+
+{
+    "type": "ColumnSet",
+    "columns": [
+        {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Obj_NAME",
+                    "wrap": true
+                }
+            ]
+        },
+        {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Obj_DIST",
+                    "wrap": true
+                }
+            ]
+        },
+        {
+            "type": "Column",
+            "width": "stretch",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Obj_DATE",
+                    "wrap": true
+                }
+            ]
+        }
+    ]
+}
